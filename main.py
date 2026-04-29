@@ -9,13 +9,12 @@ console = Console()
 history = []
 
 while True:
-    # Головне меню
     menu = Panel.fit(
         "[bold magenta]Головне меню[/bold magenta]\n\n"
         "[cyan]1.[/cyan] Почати гру\n"
         "[cyan]2.[/cyan] Історія ігор\n"
         "[cyan]3.[/cyan] Вихід",
-        title="[bold green]Вітаємо в Аркаді! 🎮[/bold green]",
+        title="[bold green]Вітаємо в Аркаді! [/bold green]",
         border_style="white"
     )
 
@@ -26,7 +25,6 @@ while True:
         choices=["1", "2", "3"]
     )
 
-    # Почати гру
     if choice == "1":
         variants = ["Камінь", "Ножиці", "Папір"]
 
@@ -39,7 +37,6 @@ while True:
 
         console.print(f"[white]Комп'ютер обрав:[/white] [cyan]{computer}[/cyan]")
 
-        # Визначення результату
         if player == computer:
             result = "Нічия"
             color = "yellow"
@@ -58,7 +55,6 @@ while True:
 
         console.print(f"[bold {color}]Результат: {result}![/bold {color}]")
 
-        # Збереження історії
         history.append({
             "player": player,
             "computer": computer,
